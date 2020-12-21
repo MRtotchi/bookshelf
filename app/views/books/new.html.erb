@@ -1,0 +1,10 @@
+<%= link_to '書籍情報一覧', books_path%>
+<%= link_to '新規書籍登録(自動)', new_isbn_path %>
+<%= link_to '未購入品一覧', search_status_index_path %>
+<%= link_to '書籍検索', searches_path %>
+
+<h1>新規書籍登録(手動)</h1>
+
+<%= render 'form', book: @book %>
+
+<%= link_to 'Back', books_path %>

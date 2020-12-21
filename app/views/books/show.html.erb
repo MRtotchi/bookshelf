@@ -1,0 +1,64 @@
+<%= link_to '書籍情報一覧', books_path%>
+<%= link_to '新規書籍登録(自動)', new_isbn_path %>
+<%= link_to '新規書籍登録(手動)', new_book_path %>
+<%= link_to '未購入品一覧', search_status_index_path %>
+<%= link_to '書籍検索', searches_path %>
+
+<h1>詳細情報</h1>
+
+<p>
+  <strong >表紙イメージ:</strong>
+  <%= image_tag @book.image&.url, :size  => '60x80'%>
+</p>
+
+<p>
+  <strong>タイトル:</strong>
+  <%= @book.title %>
+</p>
+
+<p>
+  <strong >登録者名:</strong>
+  <%= @book.user.name %>
+</p>
+
+<p>
+  <strong>著者:</strong>
+  <%= @book.author %>
+</p>
+
+<p>
+  <strong >出版社:</strong>
+  <%= @book.publisher %>
+</p>
+
+<p>
+  <strong>発行年:</strong>
+  <%= @book.published_at %>
+</p>
+
+<p>
+  <strong>研究班:</strong>
+  <%= @book.group&.name %>
+</p>
+
+<p>
+  <strong>概要:</strong>
+  <%= @book.summary %>
+</p>
+
+<p>
+  <strong>Isbnコード:</strong>
+  <%= @book.isbn %>
+</p>
+
+<p>
+  <strong>状態:</strong>
+  <%= @book.status %>
+</p>
+
+<p>
+  <strong>コメント:</strong>
+  <%= @book.comment %>
+</p>
+<%= link_to '書籍情報の編集', edit_book_path(@book) %>
+<%= link_to '削除', @book, method: :delete, data: { confirm: '本当に書籍情報を削除しますか？' } %>
