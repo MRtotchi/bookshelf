@@ -3,24 +3,30 @@
   <head>
     <title>SampleApp</title>
     <%= csrf_meta_tags %>
-
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
     <header>
+    <div class="header1">
       <nav>
         <% if user_signed_in? %>
-          <strong>ようこそ<%= link_to current_user.name, books_path %>さん</strong></br>
-          所属:<%= current_user.group.name%>
-          <td align="right"><%= link_to 'プロフィール変更', edit_user_registration_path %></td>
+          <strong>ようこそ<%= link_to current_user.name, edit_user_registration_path %>さん</strong></br>
+          <div class="header3">     
           <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
-        <% else %>
-          <%= link_to 'サインアップ', new_user_registration_path %>
-          <%= link_to 'ログイン', new_user_session_path %>
+          </div>
+          所属:<%= current_user.group.name%>
+    </div>
+     
+          
         <% end %>
       </nav>
+      <brS>
    </header>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>

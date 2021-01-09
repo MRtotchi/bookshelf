@@ -3,6 +3,6 @@ class Book < ApplicationRecord
     
     belongs_to :user
     belongs_to :group
-    
+    belongs_to :rental_user, optional: true, class_name: "User"
     validates :isbn, uniqueness: true
 end

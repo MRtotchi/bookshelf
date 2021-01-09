@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+
+.header1{
+    font-size:20px;
+}
+
+.header2 {
+    font-size:15px;
+}
+
+.header3{
+    font-size:20px;
+    float:right;
+    
+}

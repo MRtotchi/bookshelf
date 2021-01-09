@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users
   resources :books
   get 'books/status'
@@ -6,11 +8,12 @@ Rails.application.routes.draw do
   #get 'books/use_api'
   
  resources :search_status
- 
+ resources :rental_books
  resource :isbn
-
+ resource :state_to_ordered
  resource :takeout
  resources :searches
+ resources :now_order
  
  root 'books#index'
   

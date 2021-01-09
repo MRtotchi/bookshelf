@@ -1,0 +1,55 @@
+<table class="table table-bordered">
+  <thead>
+
+    <tr>
+      <th class="text-center">表紙</th>
+      <th class="text-center">タイトル</th>
+      <th class="text-center">著者</th>
+      <th class="text-center">出版社</th>
+      <th class="text-center">発行年</th>
+      <th class="text-center">研究班</th>
+      <th class="text-center">登録者</th>
+      <th class="text-center">備考</th>
+      <th class="text-center" colspan="4" >操作</th>
+      <th class="text-center">所有者</th>
+      
+    </tr>
+  
+  </thead>
+
+  <tbody>
+    <% books.each do |book| %>
+      <tr>
+        <% if book.image&.url %>
+        <td><%= image_tag book.image&.url, :size  => '60x80'%></td>
+        <% end %>
+        <td align="center"><%= book.title %></td>
+        <td align="center"><%= book.author %></td>
+        <td align="center"><%= book.publisher %></td>
+        <td align="center"><%= book.published_at %></td>
+        <td align="center"><%= book.group&.name %></td>
+        <td align="center"><%= book.user&.name %></td>
+        <td align="center"><%= book.comment %></td>
+        <td>
+          <% if book.rental_user %> <%# rental_userが存在する場合　%>
+            <% if book.rental_user==current_user %><%# かつrental_userとcurrent_userが一致する場合%>
+              <%= link_to '返却', rental_book_path(book), method: :delete, data: { confirm: '書籍の返却を行いますか？' } %>
+            <% else %>
+            <span >貸出中</span>
+            <% end %>
+          <% elsif book.status=="未購入"%>
+          
+          <% else %>
+          <%= link_to '貸出', rental_book_path(book), method: :put %>
+          <% end %>
+        </td>
+        <td><%= link_to '詳細', book %></td>
+        <td><%= link_to '編集', edit_book_path(book) %></td>
+        <td><%= link_to '削除', book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
+        <td align="center"><%= book.rental_user&.name %></td>
+      </tr>
+    <% end %>
+    
+  </tbody>
+</table>
+<%= paginate books %>

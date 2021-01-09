@@ -57,3 +57,5 @@ gem 'carrierwave'#画像アップロード用のgem
 gem 'ransack'
 
 gem 'devise'
+
+gem 'activeadmin'
