@@ -5,6 +5,6 @@ class StateToOrderedsController < ApplicationController
         @books.update(status: "発注済")
         
         PurchaseOrderMailer.order(@books,current_user).deliver
-        redirect_to new_isbn_path, notice: 'メールが送信されました'
+        redirect_to books_path, notice: 'メールが送信されました'
     end
 end

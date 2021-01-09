@@ -16,7 +16,6 @@ private
       :author_cont,
       :publisher_cont,
       :isbn_cont,
-      :status_cont,
       :summary_cont
       
     )
