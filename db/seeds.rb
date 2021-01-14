@@ -28,3 +28,5 @@
 # Group.find_or_create_by(name:"A班")
 # Group.find_or_create_by(name:"B班")
 # Group.find_or_create_by(name:"C班")
+Group.find_or_create_by(name:"common")
+

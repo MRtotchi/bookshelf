@@ -1,11 +1,14 @@
 <%= @user.name %>さんより
-書籍の注文依頼が届いています。
+下記の書籍の注文依頼が届いています。
 
-対象書籍一覧
+注文書籍
 
 <% @books.each do |book| %>
-    <%= book.title %>
+    ・<%= book.title %>
 <% end %>
+
+
+ISBNコード
 
 <% @books.each do |book| %>
     <%= book.isbn%>
