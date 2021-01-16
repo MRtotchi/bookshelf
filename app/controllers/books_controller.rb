@@ -4,7 +4,9 @@ class BooksController < ApplicationController
   # GET /books
   # GET /books.json
   def index
-    @books = Book.where(status: "購入済").page(params[:page]).per(10).reverse_order#ページング表示#10項目ごとに表示#最新順
+    @books = Book.where(status: "購入済")
+    .or(Book.where(status: ""))
+    .page(params[:page]).per(10).reverse_order#ページング表示#10項目ごとに表示#最新順
   end
 
   # GET /books/1

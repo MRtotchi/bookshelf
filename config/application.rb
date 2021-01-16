@@ -12,12 +12,12 @@ module SampleApp
     # Application configuration should go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded.
  config.action_mailer.delivery_method = :smtp
-config.action_mailer.smtp_settings = {
+ config.action_mailer.smtp_settings = {
  address:              'smtp.gmail.com',
  port:                  587,
  domain:               'gmail.com',
- user_name:            'bigbird19980311@gmail.com',
- password:             'Live0311',
+ user_name:            'kandai.algo@gmail.com',
+ password:             'udnxoyxuzqmwmkpe',
  authentication:       'plain',
  enable_starttls_auto:  true
 }

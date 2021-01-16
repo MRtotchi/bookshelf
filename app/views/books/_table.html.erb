@@ -40,7 +40,7 @@
           <% elsif book.status=="未購入"%>
           
           <% else %>
-          <%= link_to '貸出', rental_book_path(book), method: :put %>
+          <%= link_to '貸出', rental_book_path(book), method: :put, data: { confirm: '書籍の貸出を行いますか？' }%>
           <% end %>
         </td>
         <td><%= link_to '詳細', book %></td>
