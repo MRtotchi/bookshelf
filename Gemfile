@@ -6,8 +6,7 @@ gem 'rails', '~> 5.2'
 
 ruby "2.6.3"
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3','~> 1.4'
-
+gem 'pg'
 # Use Puma as the app server
 gem 'puma', '~> 3.0'
 # Use SCSS for stylesheets
@@ -63,7 +62,4 @@ gem 'devise'
 
 gem 'activeadmin'
 
-group :production do
-  gem 'pg'
-end
 
