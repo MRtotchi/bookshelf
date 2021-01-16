@@ -6,7 +6,7 @@
 #
 default: &default
   adapter: postgresql
-  username: ec2-user
+  username: ochotoshiaki
   encoding: unicode
   password:
   pool: 5
