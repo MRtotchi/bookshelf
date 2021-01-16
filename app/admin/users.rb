@@ -21,9 +21,9 @@ ActiveAdmin.register User do
     f.inputs do
       
       f.input :name , label: '名前'
-      f.input :email
-      f.input :password
-      f.input :password_confirmation
+      f.input :email ,label: 'メールアドレス'
+      f.input :password ,label: 'パスワード'
+      f.input :password_confirmation ,label: '確認用パスワード'
       f.input :group_id, as: :radio, collection: Group.all, label: '研究班'
     end
     f.actions
