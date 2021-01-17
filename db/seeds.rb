@@ -25,9 +25,9 @@
     #)
 #end
 
-# Group.find_or_create_by(name:"A班")
-# Group.find_or_create_by(name:"B班")
-# Group.find_or_create_by(name:"C班")
+Group.find_or_create_by(name:"Web班")
+Group.find_or_create_by(name:"Network班")
+Group.find_or_create_by(name:"Grid班")
 Group.find_or_create_by(name:"common")
 
 AdminUser.create!(email: 'bigbird19980311@gmail.com', password: 'password', password_confirmation: 'password')
