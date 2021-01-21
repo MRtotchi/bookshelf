@@ -62,4 +62,6 @@ gem 'devise'
 
 gem 'activeadmin'
 
+gem "aws-sdk-s3", require: false 
+
 
