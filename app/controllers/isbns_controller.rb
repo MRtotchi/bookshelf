@@ -21,7 +21,7 @@ class IsbnsController < ApplicationController
         if response["items"][0]["volumeInfo"]["imageLinks"]
         image = response["items"][0]["volumeInfo"]["imageLinks"]["smallThumbnail"]
         else
-            image = defaultbook.png
+            image = nil
         end
         publisher = response["items"][0]["volumeInfo"]["publisher"]
         
