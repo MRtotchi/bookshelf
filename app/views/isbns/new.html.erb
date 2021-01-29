@@ -11,7 +11,7 @@
   <%= form.label :isbnコード %>
   <%= form.text_field :isbn %>
 <br>
-  <%= form.label :研究班 %>
+  <%= form.label :分類 %>
   <%= form.select :group_id, Group.all.map { |group| [group.name, group.id] } %>
 <br>
   <%= form.label :状態 %>
