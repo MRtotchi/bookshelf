@@ -38,7 +38,7 @@
 class Book < ApplicationRecord
     mount_uploader :image, ImageUploader
     has_many :rentals
-    has_many :users, through: :rentals
+    has_many :rental_users, through: :rentals, class_name: "User"
     belongs_to :user
     belongs_to :group
     belongs_to :rental_user, optional: true, class_name: "User"

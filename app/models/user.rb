@@ -33,7 +33,6 @@ class User < ApplicationRecord
   has_many :rental_books, class_name: "Book", foreign_key: :rental_user_id
   belongs_to :group
   has_many :rentals
-  has_many :books, through: :rentals
-  
+  has_many :rental_books, through: :rentals, class_name: "Book"
   
 end
