@@ -16,8 +16,8 @@ module SampleApp
  address:              'smtp.gmail.com',
  port:                  587,
  domain:               'gmail.com',
- user_name:            'kandai.algo@gmail.com',
- password:             'udnxoyxuzqmwmkpe',
+ user_name:            Rails.application.credentials.gmail[:address],
+ password:             Rails.application.credentials.gmail[:password],
  authentication:       'plain',
  enable_starttls_auto:  true
 }
@@ -25,7 +25,7 @@ module SampleApp
 end
 
 Sentry.init do |config|
-  config.dsn = 'https://5b5c919ade7343afaf932ee127891900@o514948.ingest.sentry.io/5618964'
+  config.dsn = Rails.application.credentials.sentry[:dsn]
   config.breadcrumbs_logger = [:active_support_logger]
 
   # To activate performance monitoring, set one of these options.
