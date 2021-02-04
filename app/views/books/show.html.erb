@@ -63,5 +63,15 @@
   <strong>コメント:</strong>
   <%= @book.comment %>
 </p>
+
+<p>
+  <strong>貸し出し履歴:</strong>
+  <ul>
+  <% @book.rental_users.each do |user| %>
+    <li><%= user.name%></li>
+  <% end %>
+  </ul>
+</p>
+
 <%= link_to '編集', edit_book_path(@book) %>
 <%= link_to '削除', @book, method: :delete, data: { confirm: '本当にこの書籍情報を削除しますか？' } %>

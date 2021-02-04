@@ -18,7 +18,11 @@
 #  fk_rails_...  (book_id => books.id)
 #  fk_rails_...  (user_id => users.id)
 #
-class Rental < ApplicationRecord
-  belongs_to :user
-  belongs_to :book
-end
+
+one:
+  user: one
+  book: one
+
+two:
+  user: two
+  book: two

@@ -1,4 +1,9 @@
 class RentalBooksController < ApplicationController
+
+    def create
+        Rental.create(book_id: , user_id: current_user.id)
+    end
+
     def update
         @book = Book.find(params[:id])
         @book.rental_user=current_user

@@ -18,7 +18,10 @@
 #  fk_rails_...  (book_id => books.id)
 #  fk_rails_...  (user_id => users.id)
 #
-class Rental < ApplicationRecord
-  belongs_to :user
-  belongs_to :book
+require "test_helper"
+
+class RentalTest < ActiveSupport::TestCase
+  # test "the truth" do
+  #   assert true
+  # end
 end

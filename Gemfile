@@ -38,6 +38,12 @@ group :development, :test do
   gem 'sqlite3','~> 1.4'
   gem 'pry'
   gem 'pry-byebug'
+  
+  gem "rubocop" # Lint Announce
+  gem "rubocop-performance" # Lint Announce
+  gem "rubocop-rails" # Lint Announce
+  gem "rubocop-rspec" # Lint Announce
+  gem "rubocop-thread_safety" # Lint Announce
 end
 
 group :development do
@@ -69,3 +75,4 @@ gem 'fog-aws'
 
 gem "sentry-ruby"
 gem "sentry-rails"
+
