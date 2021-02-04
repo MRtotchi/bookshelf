@@ -31,22 +31,22 @@
         <td align="center"><%= book.user&.name %></td>
         <td align="center"><%= book.comment %></td>
         <td>
-          <% if book.rental_user %> <%# rental_userが存在する場合　%>
-            <% if book.rental_user==current_user %><%# かつrental_userとcurrent_userが一致する場合%>
-              <%= link_to '返却', rental_book_path(book), method: :delete, data: { confirm: '書籍の返却を行いますか？' } %>
+          <% if false %> <%# rental_userが存在する場合　%>
+            <% if book.rental_users==current_user %><%# かつrental_userとcurrent_userが一致する場合%>
+              <%#= link_to '返却', rental_book_path(book), method: :delete, data: { confirm: '書籍の返却を行いますか？' } %>
             <% else %>
             <span >貸出中</span>
             <% end %>
           <% elsif book.status=="未購入"%>
           
           <% else %>
-          <%= link_to '貸出', rental_book_path(book), method: :put, data: { confirm: '書籍の貸出を行いますか？' }%>
+          <%= link_to '貸出', rentals_path(id: book.id), method: :post, data: { confirm: '書籍の貸出を行いますか？' }%>
           <% end %>
         </td>
         <td><%= link_to '詳細', book %></td>
         <td><%= link_to '編集', edit_book_path(book) %></td>
         <td><%= link_to '削除', book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
-        <td align="center"><%= book.rental_user&.name %></td>
+        <td align="center"><%#= book.rental_user&.name %></td>
       </tr>
     <% end %>
     

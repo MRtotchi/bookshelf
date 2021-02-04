@@ -30,9 +30,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :timeoutable
   
   has_many :books
-  has_many :rental_books, class_name: "Book", foreign_key: :rental_user_id
   belongs_to :group
   has_many :rentals
-  has_many :rental_books, through: :rentals, class_name: "Book"
+  has_many :rental_books, through: :rentals, source: :book
   
 end

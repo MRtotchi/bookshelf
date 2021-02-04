@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   
  resources :search_status
  resources :rental_books
+ resources :rentals, only: [:create]
  resource :isbn
  resource :state_to_ordered
  resource :takeout
