@@ -4,17 +4,16 @@ Rails.application.routes.draw do
   devise_for :users
   resources :books
   get 'books/status'
-  #get 'books/search_from_status'
-  #get 'books/use_api'
   
- resources :search_status
- resources :rental_books
- resources :rentals, only: [:create]
- resource :isbn
- resource :state_to_ordered
- resource :takeout
- resources :searches
- resources :now_order
+  resources :search_status
+  resources :rental_books
+  resources :rentals, only: [:create]
+  resource :isbn
+  resource :state_to_ordered
+  resource :takeout
+  resources :searches
+  resources :now_order
+  resources :users, only: [:index]
  
  root 'books#index'
   
