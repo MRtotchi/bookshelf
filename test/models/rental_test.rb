@@ -3,6 +3,7 @@
 # Table name: rentals
 #
 #  id         :bigint           not null, primary key
+#  returned   :boolean          default(FALSE), not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  book_id    :bigint           not null
