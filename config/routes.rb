@@ -6,8 +6,7 @@ Rails.application.routes.draw do
   get 'books/status'
   
   resources :search_status
-  resources :rental_books
-  resources :rentals, only: [:create]
+  resources :rentals, only: [:create, :update]
   resource :isbn
   resource :state_to_ordered
   resource :takeout
