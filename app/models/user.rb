@@ -28,10 +28,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable
-  
   has_many :books
   belongs_to :group
   has_many :rentals
   has_many :rental_books, through: :rentals, source: :book
+  scope :now_rental_users, -> do
+    eager_load(:rentals).where(rentals: {returned: false})
+  end 
   
 end
