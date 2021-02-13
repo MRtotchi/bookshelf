@@ -48,7 +48,7 @@ class Book < ApplicationRecord
     
     def rental_user
         not_returned_rental = rentals.where(returned: false).first
-        not_returned_rental.user
+        not_returned_rental&.user
     end
 
     def now_rental?
