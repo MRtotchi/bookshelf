@@ -32,7 +32,7 @@
         <td align="center"><%= book.comment %></td>
         <td>
           <% if book.now_rental? %> <%# 本に紐付いているrental_usersのうち、returnedがfalseのデータが存在する場合 %>
-            <% if book.rental_user==current_user %><%# かつrental_userとcurrent_userが一致する場合%>
+            <% if book.rental_user==current_user %>
               <%= link_to '返却', rental_path(id: book.rentals.now_rental.first.id), method: :patch, data: { confirm: '書籍の返却を行いますか？' } %>
             <% else %><%# rental_userが存在するがcurrent_userと一致しない（他のアカウントで書籍が借りられている）%>
             <span >貸出中</span>
@@ -46,7 +46,7 @@
         <td><%= link_to '詳細', book %></td>
         <td><%= link_to '編集', edit_book_path(book) %></td>
         <td><%= link_to '削除', book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
-        <td align="center"><%#= book.rental_user&.name %></td>
+        <td align="center"><%= book.rental_user&.name %></td>
       </tr>
     <% end %>
     

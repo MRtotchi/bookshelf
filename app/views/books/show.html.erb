@@ -68,7 +68,7 @@
   <strong>貸し出し履歴:</strong>
   <ul>
   <% @book.rentals.each do |rental|%>
-    <li><%= rental.user.name%><%= rental.created_at.to_s(:datetime_jp) %></li>
+    <li><%= rental.user.name%>  <<%= rental.created_at.to_s(:datetime_jp) %>〜<%= rental.updated_at.to_s(:datetime_jp) %>></li>
   <% end %>
   </ul>
 </p>
