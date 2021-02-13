@@ -10,10 +10,9 @@ class RentalsController < ApplicationController
   end
   
   def update
-    rental = Rental.find(params[:id]
-    rental = Rental.update(returned:true)
-    rental.save
-    redirect_to books_path, notice:'書籍の返却処理を行いました。'
+    rental = Rental.find(params[:id])
+    rental.update(returned: true)
+    redirect_to books_path, notice: '書籍の返却処理を行いました。'
   end
 
 end

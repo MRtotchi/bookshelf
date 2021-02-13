@@ -42,4 +42,16 @@ class Book < ApplicationRecord
     belongs_to :user
     belongs_to :group
     validates :isbn, uniqueness: true
+    scope :now_rentals, -> do
+        eager_load(:rentals).where(rentals: {returned: false})
+      end 
+    
+    def rental_user
+        not_returned_rental = rentals.where(returned: false).first
+        not_returned_rental.user
+    end
+
+    def now_rental?
+        rentals.now_rental.present?
+    end 
 end

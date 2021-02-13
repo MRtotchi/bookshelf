@@ -74,5 +74,6 @@ gem "aws-sdk-s3", require: false
 gem 'fog-aws'
 
 gem "sentry-ruby"
+
 gem "sentry-rails"
 
