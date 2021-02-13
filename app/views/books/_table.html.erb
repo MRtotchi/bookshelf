@@ -23,14 +23,14 @@
         <% if book.image&.url %>
         <td><%= image_tag book.image&.url, :size  => '60x80'%></td>
         <% end %>
-        <td align="center"><%= book.title %></td>
-        <td align="center"><%= book.author %></td>
-        <td align="center"><%= book.publisher %></td>
-        <td align="center"><%= book.published_at %></td>
-        <td align="center"><%= book.group&.name %></td>
-        <td align="center"><%= book.user&.name %></td>
-        <td align="center"><%= book.comment %></td>
-        <td>
+        <td class="text-center align-middle"><%= book.title %></td>
+        <td class="text-center align-middle"><%= book.author %></td>
+        <td class="text-center align-middle"><%= book.publisher %></td>
+        <td class="text-center align-middle"><%= book.published_at %></td>
+        <td class="text-center align-middle"><%= book.group&.name %></td>
+        <td class="text-center align-middle"><%= book.user&.name %></td>
+        <td class="text-center align-middle"><%= book.comment %></td>
+        <td class="text-center align-middle">
           <% if book.now_rental? %> <%# 本に紐付いているrental_usersのうち、returnedがfalseのデータが存在する場合 %>
             <% if book.rental_user==current_user %>
               <%= link_to '返却', rental_path(id: book.rentals.now_rental.first.id), method: :patch, data: { confirm: '書籍の返却を行いますか？' } %>
@@ -43,10 +43,10 @@
           <%= link_to '貸出', rentals_path(id: book.id), method: :post, data: { confirm: '書籍の貸出を行いますか？' }%>
           <% end %>
         </td>
-        <td><%= link_to '詳細', book %></td>
-        <td><%= link_to '編集', edit_book_path(book) %></td>
-        <td><%= link_to '削除', book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
-        <td align="center"><%= book.rental_user&.name %></td>
+        <td class="text-center align-middle"><%= link_to '詳細', book %></td>
+        <td class="text-center align-middle"><%= link_to '編集', edit_book_path(book) %></td>
+        <td class="text-center align-middle"><%= link_to '削除', book, method: :delete, data: { confirm: '本当に削除してよろしいですか？' } %></td>
+        <td class="text-center align-middle"><%= book.rental_user&.name %></td>
       </tr>
     <% end %>
     
