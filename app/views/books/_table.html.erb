@@ -8,7 +8,6 @@
       <th class="text-center">出版社</th>
       <th class="text-center">発行年</th>
       <th class="text-center">分類</th>
-      <th class="text-center">登録者</th>
       <th class="text-center">コメント</th>
       <th class="text-center" colspan="4" >操作</th>
       <th class="text-center">所有者</th>
@@ -28,7 +27,6 @@
         <td class="text-center align-middle"><%= book.publisher %></td>
         <td class="text-center align-middle"><%= book.published_at %></td>
         <td class="text-center align-middle"><%= book.group&.name %></td>
-        <td class="text-center align-middle"><%= book.user&.name %></td>
         <td class="text-center align-middle"><%= book.comment %></td>
         <td class="text-center align-middle">
           <% if book.now_rental? %> <%# 本に紐付いているrental_usersのうち、returnedがfalseのデータが存在する場合 %>
