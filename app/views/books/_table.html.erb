@@ -36,7 +36,7 @@
             <span >貸出中</span>
             <% end %>
           <% elsif book.status=="未購入"%><%#未購入品は貸出できない %>
-          <span>未購入</span>
+          <span></span>
           <% else %>
           <%= link_to '貸出', rentals_path(id: book.id), method: :post, data: { confirm: '書籍の貸出を行いますか？' }%>
           <% end %>
